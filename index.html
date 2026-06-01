@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KingsWear NG</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#000;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:gold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+/* Hero Section */
+.hero{
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1523398002811-999ca8dec234');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content h1{
+    font-size:60px;
+}
+
+.hero-content p{
+    margin:20px 0;
+    font-size:20px;
+}
+
+.btn{
+    padding:12px 25px;
+    background:gold;
+    color:black;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+/* Sections */
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:35px;
+    color:gold;
+}
+
+/* Products */
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1c1c1c;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+.card h3{
+    margin-top:15px;
+}
+
+.price{
+    color:gold;
+    margin-top:10px;
+}
+
+/* About */
+.about{
+    text-align:center;
+    line-height:1.8;
+}
+
+/* Contact */
+.contact{
+    text-align:center;
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:5px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    background:gold;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:25px;
+    background:black;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+.hero-content h1{
+    font-size:40px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">KingsWear NG</div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Wear Like Royalty</h1>
+        <p>Premium fashion made for kings and queens.</p>
+        <a class="btn" href="#collection">Shop Now</a>
+    </div>
+</section>
+
+<section id="collection">
+    <h2 class="section-title">Featured Collection</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" alt="">
+            <h3>Luxury T-Shirt</h3>
+            <p class="price">₦15,000</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723" alt="">
+            <h3>Urban Hoodie</h3>
+            <p class="price">₦25,000</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1506629905607-0e1c8a53c8e1" alt="">
+            <h3>Street Joggers</h3>
+            <p class="price">₦18,000</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Us</h2>
+
+    <div class="about">
+        <p>
+            KingsWear NG is more than clothing — it's a lifestyle.
+            We create premium fashion pieces that reflect confidence,
+            style, and royalty.
+        </p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <div class="contact">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="5" placeholder="Message"></textarea>
+
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</section>
+
+<footer>
+    © 2026 KingsWear NG | All Rights Reserved
+</footer>
+
+<script>
+function sendMessage(){
+    alert("Message Sent Successfully!");
+}
+</script>
+
+</body>
+</html>
