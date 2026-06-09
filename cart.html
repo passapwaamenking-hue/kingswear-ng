@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KingsWear NG | Cart</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#111;
+    color:#fff;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#000;
+}
+
+.logo{
+    color:gold;
+    font-size:26px;
+    font-weight:bold;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:15px;
+}
+
+.container{
+    padding:50px 8%;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+    color:gold;
+}
+
+.cart-box{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
+}
+
+.items{
+    background:#1c1c1c;
+    padding:20px;
+    border-radius:10px;
+}
+
+.item{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+    border-bottom:1px solid #333;
+    padding-bottom:15px;
+}
+
+.item img{
+    width:100px;
+    border-radius:8px;
+}
+
+.item h3{
+    margin-bottom:5px;
+}
+
+.price{
+    color:gold;
+    margin-top:5px;
+}
+
+.qty{
+    margin-top:10px;
+}
+
+.qty button{
+    width:30px;
+    height:30px;
+    border:none;
+    background:gold;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.summary{
+    background:#1c1c1c;
+    padding:20px;
+    border-radius:10px;
+    height:fit-content;
+}
+
+.summary h2{
+    margin-bottom:15px;
+    color:gold;
+}
+
+.summary p{
+    margin:10px 0;
+}
+
+.checkout-btn{
+    width:100%;
+    padding:12px;
+    background:gold;
+    border:none;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+    border-radius:6px;
+}
+
+.remove{
+    background:red;
+    color:#fff;
+    border:none;
+    padding:5px 10px;
+    margin-top:10px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+@media(max-width:768px){
+    .cart-box{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">KingsWear NG</div>
+<div>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="cart.html">Cart</a>
+</div>
+</nav>
+
+<div class="container">
+
+<h1>Your Cart</h1>
+
+<div class="cart-box">
+
+<!-- ITEMS -->
+<div class="items">
+
+<div class="item">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+<div>
+<h3>Premium Kings Tee</h3>
+<p class="price">₦15,000</p>
+
+<div class="qty">
+<button onclick="decrease()">-</button>
+<span id="qty">1</span>
+<button onclick="increase()">+</button>
+</div>
+
+<button class="remove">Remove</button>
+</div>
+</div>
+
+</div>
+
+<!-- SUMMARY -->
+<div class="summary">
+<h2>Order Summary</h2>
+
+<p>Subtotal: ₦15,000</p>
+<p>Delivery: ₦2,000</p>
+<p><b>Total: ₦17,000</b></p>
+
+<button class="checkout-btn" onclick="checkout()">
+Proceed to Checkout
+</button>
+</div>
+
+</div>
+
+</div>
+
+<script>
+let qty = 1;
+
+function increase(){
+qty++;
+document.getElementById("qty").innerText = qty;
+}
+
+function decrease(){
+if(qty > 1){
+qty--;
+document.getElementById("qty").innerText = qty;
+}
+}
+
+function checkout(){
+alert("Redirecting to checkout...");
+}
+</script>
+
+</body>
+</html>
