@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KingsWear NG | Product</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#111;
+    color:#fff;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+.product{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.product img{
+    width:100%;
+    border-radius:10px;
+}
+
+.product-info h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:28px;
+    color:gold;
+    margin-bottom:20px;
+}
+
+.description{
+    line-height:1.8;
+    color:#ddd;
+    margin-bottom:20px;
+}
+
+select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:5px;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:20px 0;
+}
+
+.quantity button{
+    width:40px;
+    height:40px;
+    border:none;
+    background:gold;
+    cursor:pointer;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.add-cart{
+    width:100%;
+    padding:15px;
+    background:gold;
+    border:none;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.add-cart:hover{
+    opacity:0.9;
+}
+
+@media(max-width:768px){
+    .product{
+        grid-template-columns:1fr;
+    }
+
+    .product-info h1{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="product">
+
+<div>
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" alt="KingsWear Tee">
+</div>
+
+<div class="product-info">
+
+<h1>Premium Kings Tee</h1>
+
+<p class="price">₦15,000</p>
+
+<p class="description">
+Premium quality KingsWear NG T-shirt designed for comfort,
+style and durability. Perfect for casual outings,
+streetwear fashion and everyday confidence.
+</p>
+
+<label>Size</label>
+<select>
+<option>Small (S)</option>
+<option>Medium (M)</option>
+<option>Large (L)</option>
+<option>Extra Large (XL)</option>
+</select>
+
+<label>Color</label>
+<select>
+<option>Black</option>
+<option>White</option>
+<option>Gold</option>
+</select>
+
+<div class="quantity">
+<button onclick="decrease()">-</button>
+<span id="qty">1</span>
+<button onclick="increase()">+</button>
+</div>
+
+<button class="add-cart" onclick="addToCart()">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+let qty = 1;
+
+function increase(){
+    qty++;
+    document.getElementById("qty").innerText = qty;
+}
+
+function decrease(){
+    if(qty > 1){
+        qty--;
+        document.getElementById("qty").innerText = qty;
+    }
+}
+
+function addToCart(){
+    alert(qty + " item(s) added to cart!");
+}
+</script>
+
+</body>
+</html>
